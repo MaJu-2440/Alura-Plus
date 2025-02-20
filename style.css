@@ -28,14 +28,15 @@ body {
 }
 
 .section__container {
-    height: 100vh;
+    height: auto;
     width: 100vw;
-    padding: 0 10%;
+    padding: 5% 10%;
 
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
     justify-content: center;
+    gap: 2rem;
 }
 
 .hero__container {
@@ -119,6 +120,7 @@ body {
 
 .section__image {
     padding: 3rem;
+    width: 100%;
 }
 
 .section__content--title {
@@ -142,7 +144,8 @@ body {
     gap: 2rem;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
+    padding: 5% 5%;
 }
  
 .dispositivos {
@@ -156,6 +159,10 @@ body {
 .dispositivos .dispositivos__content {
     padding: 1rem;
     align-items: center;
+}
+
+.dispositivos__content img {
+    width: 100%;
 }
 
 .dispositivos__content--subtitle {
@@ -181,6 +188,8 @@ body {
 
 .footer__lista {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
     list-style: none;
 }
@@ -204,4 +213,80 @@ body {
     line-height: 1.5;
     color: var(--text-color);
     text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .section__container {
+        padding: 0 5%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .hero__content--buttons {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .hero__content--title {
+        padding: 0;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .hero__container {
+        background-image: none;
+        display: block;
+        padding: 0 2rem;
+    }
+
+    .hero__content--image {
+        height: auto;
+        width: 80%;
+    }
+
+    .section__container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+        padding: 5% 5%;
+    }
+
+    .section__container:nth-of-type(3) {
+        flex-direction: column;
+    }
+
+    .section__image {
+        padding: 0 3rem;
+    }
+
+    .section__container--dispositivos .section__content--title {
+        padding-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .dispositivos {
+        flex-direction: column;
+    }
+
+    .footer__container {
+        padding: 2rem;
+        align-items: start;
+    }
+    
+    .footer__lista {
+        justify-content: start;
+    }
+
+    .footer__text {
+        text-align: left;
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+    .hero__content--title {
+        margin: 0;
+    }
 }
